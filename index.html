@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão: Inteligência Artificial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #10131c;
+            --primary-color: #12e2dc;
+            --secondary-color: #7c3aed;
+            --led-glow: #12e2dc;
+            --white: #fff;
+            --footer-bg: #242731;
+            --text-color: #e6e7ef;
+            --card-bg: #171a23;
+            --shadow: 0 8px 32px 0 rgba(18, 226, 220, 0.10);
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Poppins', Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+        header {
+            background: var(--footer-bg);
+            box-shadow: 0 4px 24px rgba(18, 226, 220, 0.03);
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 92%;
+            margin: 0 auto;
+            padding: 1.1em 0;
+        }
+
+        .led-title {
+            font-family: 'Orbitron', 'Poppins', Arial, sans-serif;
+            font-size: 2.6em;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+            text-shadow:
+                0 0 6px var(--led-glow),
+                0 0 16px var(--led-glow),
+                0 0 20px #fff,
+                0 0 40px #78fff6,
+                0 0 80px var(--secondary-color);
+            animation: led-flicker 2s infinite alternate;
+            margin: 0;
+        }
+
+        @keyframes led-flicker {
+            0%, 100% { opacity: 1; text-shadow:
+                0 0 6px var(--led-glow),
+                0 0 16px var(--led-glow),
+                0 0 20px #fff,
+                0 0 40px #78fff6,
+                0 0 80px var(--secondary-color);}
+            40% { opacity: 0.7; text-shadow:
+                0 0 4px var(--led-glow),
+                0 0 8px var(--led-glow),
+                0 0 10px #fff,
+                0 0 20px #78fff6;}
+            60% { opacity: 1; }
+            80% { opacity: 0.6; }
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.8em;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 1.1em;
+            transition: color 0.2s, text-shadow 0.2s;
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+            background: #161b22;
+            text-shadow: 0 0 8px var(--primary-color), 0 0 14px var(--primary-color);
+        }
+
+        main {
+            min-height: 80vh;
+            width: 95%;
+            max-width: 900px;
+            margin: 36px auto 0 auto;
+            padding-bottom: 32px;
+        }
+
+        .destaque {
+            background: linear-gradient(90deg, var(--primary-color) 25%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 2.4em 1.6em;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 2.5em;
+            box-shadow: var(--shadow);
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+
+        .destaque h2 {
+            margin-top: 0;
+            font-family: 'Orbitron', 'Poppins', Arial, sans-serif;
+            font-size: 2em;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.4em;
+        }
+
+        .conteudo {
+            background: var(--card-bg);
+            margin: 2.2em 0 0 0;
+            padding: 2em 1.5em;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px 0 rgba(60, 80, 180, 0.16);
+            font-size: 1.1em;
+        }
+
+        .conteudo h3 {
+            margin-top: 0;
+            font-family: 'Orbitron', 'Poppins', Arial, sans-serif;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            font-size: 1.4em;
+        }
+
+        .conteudo ul {
+            padding-left: 1.2em;
+            margin-bottom: 1.2em;
+        }
+
+        .conteudo li {
+            margin-bottom: 0.6em;
+        }
+
+        .conteudo h4 {
+            color: var(--secondary-color);
+            font-size: 1.1em;
+            margin-bottom: 0.2em;
+            letter-spacing: 0.5px;
+            font-family: 'Orbitron', 'Poppins', Arial, sans-serif;
+        }
+
+        footer {
+            background: var(--footer-bg);
+            color: var(--white);
+            text-align: center;
+            padding: 1.1em 0 1.3em 0;
+            font-size: 1em;
+            letter-spacing: 1.5px;
+            margin-top: 3.5em;
+            font-family: 'Orbitron', 'Poppins', Arial, sans-serif;
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                flex-direction: column;
+                gap: 1.1em;
+            }
+            .destaque, .conteudo {
+                padding: 1em 0.6em;
+            }
+            main {
+                width: 99%;
+                padding-bottom: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 class="led-title">Missão IA</h1>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Missão</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="destaque">
+            <h2>Missão: Explorando a Inteligência Artificial</h2>
+            <p>
+                Descubra o mundo da IA com uma missão prática e divertida!
+            </p>
+        </section>
+        <section class="conteudo">
+            <h3>Descrição da Missão</h3>
+            <p>
+                Sua missão é pesquisar e apresentar uma aplicação interessante de Inteligência Artificial no cotidiano. Você pode escolher áreas como assistentes virtuais, carros autônomos, reconhecimento de voz, recomendação de filmes ou qualquer outro uso criativo de IA.
+            </p>
+            <ul>
+                <li>Explique o conceito escolhido.</li>
+                <li>Mostre exemplos reais de como a IA é usada.</li>
+                <li>Crie uma apresentação (pode ser um texto, vídeo, slides ou site simples).</li>
+                <li>Inclua pelo menos uma curiosidade ou desafio ético envolvendo IA.</li>
+            </ul>
+            <h4>Dica:</h4>
+            <p>
+                Utilize imagens, infográficos ou até simulações para ilustrar seu trabalho.
+            </p>
+        </section>
+        <section class="conteudo">
+            <h3>Objetivos de Aprendizagem</h3>
+            <ul>
+                <li>Compreender o que é Inteligência Artificial.</li>
+                <li>Identificar exemplos práticos de IA.</li>
+                <li>Refletir sobre desafios e impactos da IA na sociedade.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Missão IA. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
